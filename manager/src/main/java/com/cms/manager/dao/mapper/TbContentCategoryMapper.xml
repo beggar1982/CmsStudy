@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cms.manager.dao.mapper.TbContentCategoryMapper" >
+  <resultMap id="BaseResultMap" type="com.cms.manager.model.dto.TbContentCategory" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="parentId" property="parentid" jdbcType="BIGINT" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="level" property="level" jdbcType="SMALLINT" />
+    <result column="sort" property="sort" jdbcType="INTEGER" />
+    <result column="created" property="created" jdbcType="TIMESTAMP" />
+    <result column="updated" property="updated" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, parentId, name, level, sort, created, updated
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.cms.manager.dao.util.TbContentCategoryExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_content_category
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from tb_content_category
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from tb_content_category
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.cms.manager.dao.util.TbContentCategoryExample" >
+    delete from tb_content_category
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.cms.manager.model.dto.TbContentCategory" >
+    insert into tb_content_category (id, parentId, name, 
+      level, sort, created, 
+      updated)
+    values (#{id,jdbcType=BIGINT}, #{parentid,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, 
+      #{level,jdbcType=SMALLINT}, #{sort,jdbcType=INTEGER}, #{created,jdbcType=TIMESTAMP}, 
+      #{updated,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cms.manager.model.dto.TbContentCategory" >
+    insert into tb_content_category
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="parentid != null" >
+        parentId,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="level != null" >
+        level,
+      </if>
+      <if test="sort != null" >
+        sort,
+      </if>
+      <if test="created != null" >
+        created,
+      </if>
+      <if test="updated != null" >
+        updated,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="parentid != null" >
+        #{parentid,jdbcType=BIGINT},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null" >
+        #{level,jdbcType=SMALLINT},
+      </if>
+      <if test="sort != null" >
+        #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="created != null" >
+        #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated != null" >
+        #{updated,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.cms.manager.dao.util.TbContentCategoryExample" resultType="java.lang.Integer" >
+    select count(*) from tb_content_category
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tb_content_category
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.parentid != null" >
+        parentId = #{record.parentid,jdbcType=BIGINT},
+      </if>
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.level != null" >
+        level = #{record.level,jdbcType=SMALLINT},
+      </if>
+      <if test="record.sort != null" >
+        sort = #{record.sort,jdbcType=INTEGER},
+      </if>
+      <if test="record.created != null" >
+        created = #{record.created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updated != null" >
+        updated = #{record.updated,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tb_content_category
+    set id = #{record.id,jdbcType=BIGINT},
+      parentId = #{record.parentid,jdbcType=BIGINT},
+      name = #{record.name,jdbcType=VARCHAR},
+      level = #{record.level,jdbcType=SMALLINT},
+      sort = #{record.sort,jdbcType=INTEGER},
+      created = #{record.created,jdbcType=TIMESTAMP},
+      updated = #{record.updated,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cms.manager.model.dto.TbContentCategory" >
+    update tb_content_category
+    <set >
+      <if test="parentid != null" >
+        parentId = #{parentid,jdbcType=BIGINT},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null" >
+        level = #{level,jdbcType=SMALLINT},
+      </if>
+      <if test="sort != null" >
+        sort = #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="created != null" >
+        created = #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated != null" >
+        updated = #{updated,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cms.manager.model.dto.TbContentCategory" >
+    update tb_content_category
+    set parentId = #{parentid,jdbcType=BIGINT},
+      name = #{name,jdbcType=VARCHAR},
+      level = #{level,jdbcType=SMALLINT},
+      sort = #{sort,jdbcType=INTEGER},
+      created = #{created,jdbcType=TIMESTAMP},
+      updated = #{updated,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

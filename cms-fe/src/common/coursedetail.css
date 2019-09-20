@@ -1,0 +1,223 @@
+@charset "utf-8";
+
+.albuminfo {
+  background: url("../assets/abluminfo_bg.jpg");
+  width: 100%;
+  margin: 1px 0 30px;
+  overflow: hidden;
+}
+
+.albuminfo .w_950 {
+  padding: 30px 0 30px 0;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  width: 950px;
+}
+
+.video_vdo {
+  float: left;
+  margin-right: 40px;
+  margin-top: 20px;
+  width: 400px;
+  height: 300px;
+}
+
+.video_info {
+  float: left;
+  width: 510px;
+  font-size: 14px;
+}
+
+.video_info h1 {
+  color: #333;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 35px;
+  margin-bottom: 8px;
+  font-family: 微软雅黑,arial,verdana;
+}
+
+.video_info .albcomp {
+  overflow: hidden;
+  height: 70px;
+  margin-bottom: -14px;
+}
+
+.video_info .albcomp .btn_look {
+  background-color: #FF5600;
+  background-position: -230px -972px;
+  display: block;
+  width: 90px;
+  height: 36px;
+  line-height: 36px;
+  float: left;
+  color: #fff;
+  font-size: 18px;
+  padding-left: 20px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  margin-right: 17px;
+}
+
+.video_info .jrhymfk {
+  font-size: 14px;
+  line-height: 25px;
+  height: 25px;
+  width: 100%;
+  margin-top: 35px;
+}
+
+.abline {
+  height: 2px;
+  overflow: hidden;
+  margin: 20px 0 17px;
+  background: url(../assets/ablum_bg.jpg) no-repeat;
+  background-position: 0 -230px;
+}
+
+.video_info dl {
+  overflow: hidden;
+  padding-bottom: 14px;
+  clear: both;
+  font-style: normal;
+}
+
+.video_info dt, .video_info dd {
+  float: left;
+  margin-inline-start: 0px;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  -moz-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+.video_info .jstitle {
+  color: #999;
+  margin-left: 15px;
+}
+
+.gkplyy dd strong {
+  margin-right: 30px;
+}
+
+.albuminfo .w_640 {
+  padding: 30px 0 30px 0;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  width: 950px;
+}
+
+.jsjsbox {
+  margin-bottom: 30px;
+}
+
+h2 {
+  clear: both;
+  height: 30px;
+  line-height: 30px;
+  overflow: hidden;
+  padding-bottom: 15px;
+}
+
+h2 span, h2 a {
+  height: 22px;
+  line-height: 22px;
+  overflow: hidden;
+  margin-top: 4px;
+  display: block;
+  font-size: 20px;
+  float: left;
+}
+
+.jsjsbox .tcherinfo {
+  height: auto;
+  overflow: hidden;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.jsjsbox .tcherinfo a {
+  width: 100px;
+  height: 100px;
+  display:block;
+  float: left;
+}
+
+.jsjsbox .tcherinfo .img_l {
+  margin-right: 20px;
+  display: block;
+}
+
+.jsjsbox .tcherinfo .img_l img {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.jsjsbox .tcherinfo h3 {
+  font-size: 18px;
+  color: #557917;
+  padding-bottom: 8px;
+  font-family: "微软雅黑",arial,verdana;
+  display: block;
+  float: left;
+  margin-right: 15px;
+  margin-top: 0;
+}
+
+.jsjsbox .tcherinfo .gray9 {
+  color: #999 !important;
+  margin-top: 0;
+
+  margin-block-end: 0;
+  margin-block-start: 0;
+  margin-bottom: 0;
+  margin-inline-end: 0;
+  margin-inline-start: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  text-align: left;
+}
+
+.jsjsbox .tcherinfo .tchertxt {
+  height: 84px;
+  overflow: hidden;
+  line-height: 22px;
+  display: block;
+  float: left;
+  margin-top: 20px;
+  margin-left: 0;
+  color: #666;
+  padding: 0;
+}
+
+.kcjsbox {
+  margin-bottom: 100px;
+  text-align: left;
+}
+
+.kcjsbox h2 .t_kcjs {
+  background-position: 0 -175px;
+}
+
+.kcjsbox .kcjstxt {
+  color: #666;
+  margin-top: 15px;
+  line-height: 28px;
+  font-size: 14px;
+}

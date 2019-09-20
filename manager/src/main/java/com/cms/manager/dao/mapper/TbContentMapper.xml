@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cms.manager.dao.mapper.TbContentMapper" >
+  <resultMap id="BaseResultMap" type="com.cms.manager.model.dto.TbContent" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="cate_id" property="cateId" jdbcType="BIGINT" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="pic" property="pic" jdbcType="VARCHAR" />
+    <result column="isNews" property="isnews" jdbcType="BIT" />
+    <result column="isSupreme" property="issupreme" jdbcType="BIT" />
+    <result column="created" property="created" jdbcType="TIMESTAMP" />
+    <result column="updated" property="updated" jdbcType="TIMESTAMP" />
+    <result column="shortDesc" property="shortDesc" jdbcType="VARCHAR" />
+    <result column="teacher_id" property="teacherId" jdbcType="BIGINT" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.cms.manager.model.dto.TbContent" extends="BaseResultMap" >
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, cate_id, title, description, pic, content, isNews, isSupreme, created, updated, shortDesc, teacher_id
+  </sql>
+  <sql id="Blob_Column_List" >
+    content
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.cms.manager.dao.util.TbContentExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from tb_content
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.cms.manager.dao.util.TbContentExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_content
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from tb_content
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from tb_content
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+
+  <delete id="deleteByIds" parameterType="int[]">
+    <![CDATA[
+        DELETE FROM tb_content
+        WHERE id in
+        ]]>
+    <foreach collection="array" item="arr" index="no" open="("
+             separator="," close=")">
+      #{arr}
+    </foreach>
+  </delete>
+
+  <delete id="deleteByExample" parameterType="com.cms.manager.dao.util.TbContentExample" >
+    delete from tb_content
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.cms.manager.model.dto.TbContent" >
+    insert into tb_content (id, cate_id, title, 
+      description, pic, isNews, isSupreme,
+      created, updated, content, shortDesc, teacher_id
+      )
+    values (#{id,jdbcType=BIGINT}, #{cateId,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, 
+      #{description,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR}, #{isnews,jdbcType=BIT}, #{issupreme,jdbcType=BIT},
+      #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP}, #{content,jdbcType=LONGVARCHAR},
+      #{shortDesc,jdbcType=VARCHAR}, #{teacherId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cms.manager.model.dto.TbContent" >
+    insert into tb_content
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="cateId != null" >
+        cate_id,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="pic != null" >
+        pic,
+      </if>
+      <if test="isnews != null" >
+        isNews,
+      </if>
+      <if test="issupreme != null" >
+        isSupreme,
+      </if>
+      <if test="created != null" >
+        created,
+      </if>
+      <if test="updated != null" >
+        updated,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+      <if test="shortDesc != null" >
+        shortDesc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="cateId != null" >
+        #{cateId,jdbcType=BIGINT},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="pic != null" >
+        #{pic,jdbcType=VARCHAR},
+      </if>
+      <if test="isnews != null" >
+        #{isnews,jdbcType=BIT},
+      </if>
+      <if test="issupreme != null" >
+        #{issupreme,jdbcType=BIT},
+      </if>
+      <if test="created != null" >
+        #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated != null" >
+        #{updated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="shortDesc != null" >
+        #{shortDesc,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.cms.manager.dao.util.TbContentExample" resultType="java.lang.Integer" >
+    select count(*) from tb_content
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tb_content
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.cateId != null" >
+        cate_id = #{record.cateId,jdbcType=BIGINT},
+      </if>
+      <if test="record.title != null" >
+        title = #{record.title,jdbcType=VARCHAR},
+      </if>
+      <if test="record.description != null" >
+        description = #{record.description,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pic != null" >
+        pic = #{record.pic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isnews != null" >
+        isNews = #{record.isnews,jdbcType=BIT},
+      </if>
+      <if test="record.issupreme != null" >
+        isSupreme = #{record.issupreme,jdbcType=BIT},
+      </if>
+      <if test="record.created != null" >
+        created = #{record.created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updated != null" >
+        updated = #{record.updated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.content != null" >
+        content = #{record.content,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.shortDesc != null" >
+        shortDesc = #{record.shortDesc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update tb_content
+    set id = #{record.id,jdbcType=BIGINT},
+      cate_id = #{record.cateId,jdbcType=BIGINT},
+      title = #{record.title,jdbcType=VARCHAR},
+      description = #{record.description,jdbcType=VARCHAR},
+      pic = #{record.pic,jdbcType=VARCHAR},
+      isNews = #{record.isnews,jdbcType=BIT},
+      isSupreme = #{record.issupreme,jdbcType=BIT},
+      created = #{record.created,jdbcType=TIMESTAMP},
+      updated = #{record.updated,jdbcType=TIMESTAMP},
+      content = #{record.content,jdbcType=LONGVARCHAR},
+      shortDesc = #{record.shortDesc,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tb_content
+    set id = #{record.id,jdbcType=BIGINT},
+      cate_id = #{record.cateId,jdbcType=BIGINT},
+      title = #{record.title,jdbcType=VARCHAR},
+      description = #{record.description,jdbcType=VARCHAR},
+      pic = #{record.pic,jdbcType=VARCHAR},
+      isNews = #{record.isnews,jdbcType=BIT},
+      isSupreme = #{record.issupreme,jdbcType=BIT},
+      created = #{record.created,jdbcType=TIMESTAMP},
+      updated = #{record.updated,jdbcType=TIMESTAMP},
+      shortDesc = #{record.shortDesc,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cms.manager.model.dto.TbContent" >
+    update tb_content
+    <set >
+      <if test="cateId != null" >
+        cate_id = #{cateId,jdbcType=BIGINT},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="pic != null" >
+        pic = #{pic,jdbcType=VARCHAR},
+      </if>
+      <if test="isnews != null" >
+        isNews = #{isnews,jdbcType=BIT},
+      </if>
+      <if test="issupreme != null" >
+        isSupreme = #{issupreme,jdbcType=BIT},
+      </if>
+      <if test="created != null" >
+        created = #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated != null" >
+        updated = #{updated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="shortDesc != null" >
+        shortDesc = #{shortDesc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.cms.manager.model.dto.TbContent" >
+    update tb_content
+    set cate_id = #{cateId,jdbcType=BIGINT},
+      title = #{title,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      pic = #{pic,jdbcType=VARCHAR},
+      isNews = #{isnews,jdbcType=BIT},
+      isSupreme = #{issupreme,jdbcType=BIT},
+      created = #{created,jdbcType=TIMESTAMP},
+      updated = #{updated,jdbcType=TIMESTAMP},
+      content = #{content,jdbcType=LONGVARCHAR},
+      shortDesc = #{shortDesc,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cms.manager.model.dto.TbContent" >
+    update tb_content
+    set cate_id = #{cateId,jdbcType=BIGINT},
+      title = #{title,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      pic = #{pic,jdbcType=VARCHAR},
+      isNews = #{isnews,jdbcType=BIT},
+      isSupreme = #{issupreme,jdbcType=BIT},
+      created = #{created,jdbcType=TIMESTAMP},
+      updated = #{updated,jdbcType=TIMESTAMP},
+      shortDesc = #{shortDesc,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

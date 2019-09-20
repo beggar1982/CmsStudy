@@ -1,0 +1,742 @@
+@charset "utf-8";
+.header-nav li.no3 i, .header-s-button, .header-viplink i, .watchHistory .icon-watchHistory, .loginInformation .login-Avatar, .loginInformation i, .watchHistory-div-top, .watchHistory-div ul li h3 i, .icon-watchHistory-div-no, .footer-Entrance .fast-list li i, .footer-service span i {
+}
+
+body {
+  padding-top: 85px
+}
+
+.topmenu {
+  width: 100%;
+  height: 81px;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 900999;
+  border-bottom: 1px solid #f6f6f6
+}
+
+.topmenu .wrapper {
+  width: 1200px
+}
+
+.topmenu img {
+  vertical-align: inherit
+}
+
+.header-logo {
+  margin-top: 20px;
+  float: left;
+  display: block;
+  margin-right: 35px
+}
+
+.header-nav {
+  width: 284px;
+  height: 32px;
+  margin-top: 26px;
+  float: left;
+  display: inline-block
+}
+
+.header-nav li {
+  margin: 0 8px 0 9px;
+  display: inline;
+  float: left;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  font-size: 14px
+}
+
+.header-nav li a {
+  padding: 0 8px;
+  height: 32px;
+  line-height: 32px;
+  display: inline-block
+}
+
+.header-nav li a:hover {
+  color: #ff864b
+}
+
+.header-nav li.on {
+  color: #ff864b;
+  border-bottom: 3px solid #ff712b
+}
+
+.header-nav li.on a {
+  color: #ff864b
+}
+
+.header-nav li.no3 {
+  position: relative
+}
+
+.header-nav li.no3 a {
+  padding: 0 13px 0 8px
+}
+
+.header-nav li.no3 a i {
+  width: 6px;
+  height: 6px;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 15px;
+  background-position: -134px -75px
+}
+
+.header-nav li.no3.hover {
+  color: #ff864b
+}
+
+.header-nav li.no3.hover a {
+  color: #ff864b
+}
+
+.header-nav li.no3.hover i {
+  right: 0;
+  top: 9px;
+  background-position: -134px -64px
+}
+
+.header-s {
+  width: 286px;
+  float: left;
+  height: 32px;
+  background-color: #f5f5f5;
+  border: 1px solid #eeeeee;
+  border-radius: 32px 32px 32px 32px;
+  margin-top: 25px
+}
+
+.header-s .header-s-t {
+  height: 22px;
+  width: 230px;
+  float: left;
+  border: 0;
+  background-color: transparent;
+  margin: 5px 0 0 19px;
+  display: inline-block
+}
+
+.header-s .header-s-button {
+  width: 14px;
+  height: 14px;
+  float: left;
+  display: inline-block;
+  background-position: 0 -44px;
+  cursor: pointer;
+  margin: 10px 0 0 4px;
+  border: 0
+}
+
+.header-s .header-s-button:hover {
+  background-position: -19px -44px
+}
+
+.header-r {
+  display: inline;
+  float: right;
+  position: relative
+}
+
+.header-viplink {
+  display: inline-block;
+  margin-top: 30px
+}
+
+.header-viplink i {
+  width: 23px;
+  height: 18px;
+  overflow: hidden;
+  display: inline-block;
+  background-position: 0 -64px;
+  vertical-align: middle;
+  margin-right: 5px
+}
+
+.header-viplink span {
+  display: inline-block;
+  line-height: 23px;
+  font-size: 12px;
+  color: #b58334
+}
+
+.header-viplink a:hover span {
+  color: #ff864b
+}
+
+.watchHistory {
+  padding-left: 16px;
+  display: none;
+  margin-right: 16px;
+  margin-top: 26px;
+  text-align: center;
+  position: relative;
+  height: 55px
+}
+
+.watchHistory .icon-watchHistory {
+  width: 15px;
+  height: 18px;
+  overflow: hidden;
+  display: inline-block;
+  background-position: -61px -44px;
+  vertical-align: middle
+}
+
+.watchHistory span {
+  display: inline-block;
+  line-height: 22px;
+  font-size: 12px
+}
+
+.watchHistory a.watchHistory_a:hover .icon-watchHistory {
+  background-position: -81px -44px
+}
+
+.watchHistory a.watchHistory_a:hover span {
+  color: #ff864b
+}
+
+.watchHistory:hover .watchHistory-c {
+  display: block
+}
+
+.watchHistory-c {
+  display: none;
+  width: 240px;
+  height: auto;
+  overflow: hidden;
+  background-color: #fff;
+  background: rgba(255, 255, 255, 0.95);
+  padding-bottom: 35px;
+  border-radius: 4px 4px 4px 4px;
+  position: absolute;
+  left: 50%;
+  margin-left: -100px;
+  top: 33px;
+  z-index: 99999;
+  padding-top: 11px
+}
+
+.watchHistory-div {
+  width: 240px;
+  border-top: 1px solid #ff864b;
+  position: relative;
+  z-index: 1
+}
+
+.watchHistory-div ul {
+  padding-top: 10px
+}
+
+.watchHistory-div ul li {
+  padding: 10px 15px 0 15px;
+  text-align: left;
+  height: 43px;
+  overflow: hidden
+}
+
+.watchHistory-div ul li h3 {
+  height: 23px;
+  line-height: 23px;
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: normal;
+  color: #333
+}
+
+.watchHistory-div ul li h3 i {
+  width: 3px;
+  height: 3px;
+  display: inline-block;
+  background-position: -137px -92px;
+  margin-right: 9px;
+  vertical-align: middle
+}
+
+.watchHistory-div ul li p {
+  height: 20px;
+  line-height: 20px;
+  overflow: hidden;
+  font-size: 12px;
+  color: #999;
+  padding-left: 12px
+}
+
+.watchHistory-div .icon-watchHistory-div-no {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background-position: -44px -92px;
+  margin-top: 34px
+}
+
+.watchHistory-div .watchHistory-tip {
+  line-height: 26px;
+  font-size: 14px;
+  margin-top: 8px
+}
+
+.watchHistory-div-top {
+  width: 18px;
+  height: 12px;
+  overflow: hidden;
+  line-height: 12px;
+  background-position: -101px -44px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -9px;
+  display: inline-block;
+  z-index: 9
+}
+
+.watchHistory-div-b {
+  padding: 20px 50px 0 50px
+}
+
+.watchHistory-div-b a {
+  display: block;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  background-color: #ff885e;
+  background: -webkit-linear-gradient(left, #ffb591, #ff885e);
+  background: -o-linear-gradient(left, #ffb591, #ff885e);
+  background: linear-gradient(to right, #ffb591, #ff885e);
+  border-radius: 38px 38px 38px 38px;
+  font-weight: 500;
+  font-family: PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, Helvetica Neue, Arial, sans-serif
+}
+
+.watchHistory-div-b a:hover {
+  background-color: #ff885e;
+  background: -webkit-linear-gradient(left, #f6906a, #ff673e);
+  background: -o-linear-gradient(left, #f6906a, #ff673e);
+  background: linear-gradient(to right, #f6906a, #ff673e)
+}
+
+.loginInformation {
+  display: inline-block;
+  vertical-align: middle
+}
+
+.loginInformation img {
+  width: 35px;
+  height: 35px;
+  overflow: hidden;
+  display: inline-block;
+  border-radius: 35px 35px 35px 35px
+}
+
+.loginInformation .login-Avatar {
+  width: 35px;
+  height: 35px;
+  overflow: hidden;
+  display: inline-block;
+  background-position: -1px -92px
+}
+
+.loginInformation i {
+  width: 18px;
+  height: 14px;
+  overflow: hidden;
+  display: inline-block;
+  margin-bottom: -16px;
+  margin-left: -4px
+}
+
+.loginInformation i.icon-vip1 {
+  background-position: -123px -43px
+}
+
+.loginInformation i.icon-vip2 {
+  background-position: -89px -91px
+}
+
+.loginInformation .login-register {
+  display: none
+}
+
+.loginInformation .login-register a {
+  margin-left: 18px;
+  font-size: 14px;
+  color: #ff874a
+}
+
+.loginInformation .login-register a:hover {
+  text-decoration: underline
+}
+
+.channel-nav-wrap {
+  display: none;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.97);
+  position: fixed;
+  left: 0;
+  top: 81px;
+  z-index: 900999
+}
+
+.channel-nav-wrap .wrapper {
+  width: 1200px
+}
+
+.channel-nav-wrap .channel-nav {
+  padding-left: 195px;
+  padding-bottom: 30px;
+  height: auto;
+  overflow: hidden
+}
+
+.channel-nav-wrap .channel-nav dl {
+  font-size: 14px;
+  width: 150px;
+  float: left
+}
+
+.channel-nav-wrap .channel-nav dl dt {
+  height: 52px;
+  overflow: hidden;
+  line-height: 52px;
+  padding-bottom: 10px
+}
+
+.channel-nav-wrap .channel-nav dl dt a {
+  color: #333;
+  font-weight: 500
+}
+
+.channel-nav-wrap .channel-nav dl dt a:hover {
+  color: #ff864b
+}
+
+.channel-nav-wrap .channel-nav dl dd {
+  line-height: 30px;
+  overflow: hidden;
+  height: 30px
+}
+
+.channel-nav-wrap .channel-nav dl dd a {
+  color: #666
+}
+
+.channel-nav-wrap .channel-nav dl dd a:hover {
+  color: #ff864b
+}
+
+.footer {
+  width: 100%;
+  height: auto;
+  overflow: hidden
+}
+
+.footer .wrapper {
+  width: 1200px;
+  background-color: transparent
+}
+
+.footer img {
+  vertical-align: inherit
+}
+
+.footer-Entrance {
+  height: 186px;
+  padding-top: 50px;
+  background-color: #f5f5f5
+}
+
+.footer-Entrance .footer-fast {
+  width: 264px;
+  height: 145px;
+  float: left;
+  border-right: 1px solid #dcdcdc
+}
+
+.footer-Entrance .footer-fast h2 {
+  height: 18px;
+  line-height: 18px;
+  font-size: 16px;
+  font-weight: normal;
+  color: #333
+}
+
+.footer-Entrance .footer-fast .fast-list {
+  padding-top: 28px
+}
+
+.footer-Entrance .footer-fast .fast-list li {
+  text-align: center;
+  width: 54px;
+  float: left;
+  margin-right: 25px;
+  font-size: 12px
+}
+
+.footer-Entrance .footer-fast .fast-list li i {
+  width: 23px;
+  height: 18px;
+  display: inline-block
+}
+
+.footer-Entrance .footer-fast .fast-list li i.icon-fast1 {
+  background-position: 0 -64px
+}
+
+.footer-Entrance .footer-fast .fast-list li i.icon-fast2 {
+  background-position: -33px -64px
+}
+
+.footer-Entrance .footer-fast .fast-list li i.icon-fast2:hover {
+  background-position: -110px -64px
+}
+
+.footer-Entrance .footer-fast .fast-list li i.icon-fast3 {
+  background-position: -38px -44px
+}
+
+.footer-Entrance .footer-fast .fast-list li span {
+  display: block;
+  height: 28px;
+  line-height: 28px
+}
+
+.footer-Channel {
+  width: 301px;
+  height: 145px;
+  float: left;
+  border-right: 1px solid #dcdcdc;
+  padding-left: 69px
+}
+
+.footer-Channel h2 {
+  height: 18px;
+  line-height: 18px;
+  font-size: 16px;
+  font-weight: normal;
+  color: #333
+}
+
+.footer-Channel .channel-List {
+  padding-top: 21px
+}
+
+.footer-Channel .channel-List li {
+  line-height: 28px;
+  margin-right: 25px;
+  display: inline;
+  float: left;
+  font-size: 14px
+}
+
+.footer-terminal {
+  width: 285px;
+  height: 145px;
+  float: left;
+  border-right: 1px solid #dcdcdc;
+  padding-left: 60px
+}
+
+.footer-terminal .terminal-list li {
+  width: 100px;
+  float: left;
+  margin-right: 25px
+}
+
+.footer-terminal .terminal-list li span {
+  height: 18px;
+  line-height: 18px;
+  font-size: 16px;
+  font-weight: normal;
+  color: #333
+}
+
+.footer-terminal .terminal-list li img {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  margin-top: 27px
+}
+
+.footer-service {
+  width: 162px;
+  height: 145px;
+  float: left;
+  padding-left: 56px
+}
+
+.footer-service h2 {
+  height: 18px;
+  line-height: 18px;
+  font-size: 16px;
+  font-weight: normal;
+  color: #333;
+  padding-bottom: 23px
+}
+
+.footer-service strong {
+  height: 18px;
+  line-height: 18px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  display: block;
+  padding-bottom: 5px;
+  font-family: Arial, sans-serif
+}
+
+.footer-service strong span {
+  font-size: 12px;
+  font-weight: normal
+}
+
+.footer-service p {
+  line-height: 20px;
+  color: #999;
+  margin-top: 10px;
+  font-size: 12px
+}
+
+.footer-c {
+  background-color: #323232;
+  color: #fff
+}
+
+.footer-Links {
+  height: 122px;
+  overflow: hidden;
+  width: 100%;
+  border-bottom: 1px solid #4d4d4d
+}
+
+.footer-Links h2 {
+  height: 38px;
+  line-height: 38px;
+  padding-top: 28px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: normal
+}
+
+.footer-Links h2 span {
+  float: right;
+  font-size: 14px
+}
+
+.footer-Links h2 span a {
+  color: #ccc
+}
+
+.footer-Links h2 span a:hover {
+  color: #fff
+}
+
+.footer-Links .links-ul {
+  height: auto;
+  line-height: 26px;
+  overflow: hidden
+}
+
+.footer-Links .links-ul li {
+  height: 26px;
+  line-height: 26px;
+  overflow: hidden;
+  display: inline;
+  color: #999
+}
+
+.footer-Links .links-ul li a {
+  color: #999;
+  margin-right: 20px
+}
+
+.footer-Links .links-ul li a:hover {
+  color: #ccc;
+  text-decoration: underline
+}
+
+.footer-license {
+  padding-top: 29px;
+  height: 99px
+}
+
+.footer-license .footer-logo {
+  float: left;
+  margin-right: 35px
+}
+
+.footer-license .footer-copyright {
+  float: left;
+  display: inline;
+  width: 680px
+}
+
+.footer-license .footer-copyright p {
+  line-height: 18px;
+  font-size: 12px;
+  color: #808080
+}
+
+.footer-license .footer-copyright p img {
+  margin-right: 2px
+}
+
+.footer-license .footer-copyright p a {
+  color: #808080
+}
+
+.footer-license .footer-copyright .footer-copyright-p {
+  font-size: 14px;
+  line-height: 22px;
+  color: #b2b2b2;
+  padding-bottom: 3px
+}
+
+.footer-license .footer-license-img {
+  float: right;
+  display: inline
+}
+
+.footer-license .footer-license-img img {
+  margin-left: 9px;
+  width: 114px
+}
+
+.header-r .ps_list {
+  background: #fff;
+  background: rgba(255, 255, 255, 0.95);
+  position: absolute;
+  top: 66px;
+  right: -10px;
+  padding: 9px 0 7px;
+  z-index: 902999;
+  _width: 20px;
+  display: none
+}
+
+.header-r .ps_list li {
+  float: none;
+  height: 22px;
+  display: block;
+  padding: 4px 0 4px 0
+}
+
+.header-r .ps_list li a {
+  background: none;
+  padding: 0 20px;
+  text-align: left;
+  display: block;
+  line-height: 22px;
+  margin: 0;
+  float: none;
+  white-space: nowrap
+}
